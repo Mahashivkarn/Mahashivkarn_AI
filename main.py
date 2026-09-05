@@ -14,4 +14,4 @@ def create():
 def gallery():
     return render_template("gallery.html")
 
-app.run(debug=True)
+app.run(debug=False)
