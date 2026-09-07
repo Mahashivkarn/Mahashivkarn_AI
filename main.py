@@ -1,6 +1,14 @@
 from flask import Flask, render_template , request
+import os
 import uuid
+
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = 'user_uploads'
+ALLOWED_EXTENSIONS = { 'pdf', 'png', 'jpg', 'jpeg'}
+
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/")
 def home():
@@ -11,10 +19,19 @@ def create():
     myid = uuid.uuid1()
     if request.method == "POST":
         print(request.files.keys())
+        rec_id = request.form.get("uuid")
+        desc = request.form.get("text")
+        print(rec_id, desc) 
         
         for key, value in request.files.items():
             print(key, value)
-            
+            #Upload Files
+            file =request.files[key]
+            if file :
+                filename = secure_filename(file.filename)
+                folder_path = os.path.join(app.config['UPLOAD_FOLDER'], rec_id)
+                os.makedirs(folder_path, exist_ok=True)
+                file.save(os.path.join(folder_path, filename))
     return render_template("create.html" , myid=myid)
 
 @app.route("/gallery")
