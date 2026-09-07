@@ -13,11 +13,12 @@
             <h1 class="upload-title">Create Your Reel</h1>
             <p class="upload-instructions">Upload your video files to create an amazing reel. You can upload multiple files.</p>
             
-            <form action="/create" method="post" class="dropzone" id="myDropzone">
+            <form action="/create" enctype = "multipart/form-data" method="post" class="dropzone" id="myDropzone">
                 <div class="fallback">
                     <div id="fileInputs">
                         <div class="file-input-group">
                             <input name="file1" type="file" class="file-input" />
+                            <input name="uuid" type ="hidden" value ="{{myid}}">
                             <button type="button" class="remove-file-btn" onclick="removeFileInput(this)" disabled>×</button>
                         </div>
                     </div>
