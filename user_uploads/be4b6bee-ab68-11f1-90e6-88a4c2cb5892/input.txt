@@ -1,0 +1,4 @@
+file 'user_uploads/be4b6bee-ab68-11f1-90e6-88a4c2cb5892/1.jpg'
+duration 1
+file 'user_uploads/be4b6bee-ab68-11f1-90e6-88a4c2cb5892/5.jpg'
+duration 1

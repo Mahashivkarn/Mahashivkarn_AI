@@ -1,0 +1,1 @@
+ffmpeg -f concat -safe 0 -i user_uploads/11af8e90-2c16-11f0-8d78-ad551e1c593a/input.txt -i user_uploads/11af8e90-2c16-11f0-8d78-ad551e1c593a/audio.mp3 -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black" -c:v libx264 -c:a aac -shortest -r 30 -pix_fmt yuv420p static/reels/11af8e90-2c16-11f0-8d78-ad551e1c593a.mp4  

@@ -21,7 +21,7 @@ def create():
         print(request.files.keys())
         rec_id = request.form.get("uuid")
         desc = request.form.get("text")
-        print(rec_id, desc) 
+        input_files= [] 
         
         for key, value in request.files.items():
             print(key, value)
@@ -32,9 +32,14 @@ def create():
                 folder_path = os.path.join(app.config['UPLOAD_FOLDER'], rec_id)
                 os.makedirs(folder_path, exist_ok=True)
                 file.save(os.path.join(folder_path, filename))
+                input_files.append(file.filename)
             #Capture the description and save it in a file.
             with open( os.path.join(app.config['UPLOAD_FOLDER'], rec_id ,"decs.txt"), "w") as f:
                 f.write(desc)
+                
+        for fl in input_files:
+           with open(os.path.join(app.config['UPLOAD_FOLDER'], rec_id, "input.txt"),"a") as f:
+                f.write(f"file '{app.config['UPLOAD_FOLDER']}/{rec_id}/{fl}'\nduration 1\n")
     return render_template("create.html" , myid=myid)
 
 @app.route("/gallery")

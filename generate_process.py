@@ -2,7 +2,9 @@
 import os
 from text_to_audio import text_to_speech_file
 import time
+import subprocess
 
+    
 def text_to_audio(folder):
     print("TTA - ",folder)
     with open(f"user_uploads/{folder}/decs.txt") as f:
@@ -12,7 +14,11 @@ def text_to_audio(folder):
     
 
 def create_reel(folder):
-    print("TTR - " ,folder)
+    command = ""
+    subprocess.run(command,shell = True, check = True)
+        
+    print("CR- ",folder)
+    
     
 
 if __name__ == "__main__":
