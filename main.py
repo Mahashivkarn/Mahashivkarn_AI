@@ -32,6 +32,9 @@ def create():
                 folder_path = os.path.join(app.config['UPLOAD_FOLDER'], rec_id)
                 os.makedirs(folder_path, exist_ok=True)
                 file.save(os.path.join(folder_path, filename))
+            #Capture the description and save it in a file.
+            with open( os.path.join(app.config['UPLOAD_FOLDER'], rec_id ,"decs.txt"), "w") as f:
+                f.write(desc)
     return render_template("create.html" , myid=myid)
 
 @app.route("/gallery")
