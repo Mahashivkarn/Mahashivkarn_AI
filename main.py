@@ -39,11 +39,13 @@ def create():
                 
         for fl in input_files:
            with open(os.path.join(app.config['UPLOAD_FOLDER'], rec_id, "input.txt"),"a") as f:
-                f.write(f"file '{app.config['UPLOAD_FOLDER']}/{rec_id}/{fl}'\nduration 1\n")
+                f.write(f"file '{fl}'\nduration 1\n")
     return render_template("create.html" , myid=myid)
 
 @app.route("/gallery")
 def gallery():
-    return render_template("gallery.html")
+    reels = os.listdir("static/reels")
+    print(reels)
+    return render_template("gallery.html", reels =reels)
 
 app.run(debug=True)

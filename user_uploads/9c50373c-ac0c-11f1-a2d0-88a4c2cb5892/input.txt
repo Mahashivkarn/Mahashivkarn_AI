@@ -1,0 +1,24 @@
+file '1255699.jpg'
+duration 1
+file '61414050-pin-page.jpg'
+duration 1
+file 'batman-beyond-5k-logo-oa.jpg'
+duration 1
+file 'black-panther-3840x2160-13195.jpg'
+duration 1
+file 'dark-silhouette-of-a-lone-warrior-o8.jpg'
+duration 1
+file 'ghost-rider-the-most-dangerous-superhero-dd.jpg'
+duration 1
+file 'Iron_mask.jpg'
+duration 1
+file 'Itachi.png'
+duration 1
+file 'Madara Uchiha.png'
+duration 1
+file 'White Samurai.jpg'
+duration 1
+file 'sukuna-purple-5120x2880-16958.png'
+duration 1
+file 'shinobu-kocho-5120x2880-16954.jpg'
+duration 1

@@ -1,2 +1,1 @@
-x =print("YO")
-print(x)
+ers)
